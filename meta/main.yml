@@ -2,13 +2,13 @@
 dependencies: []
 
 galaxy_info:
-  author: your name
-  description: 
-  company: your company (optional)
-  license: license (GPLv2, CC-BY, etc)
+  author: Franklin Wise
+  description: Setup a new machine with some basics.
+  company: 
+  license: MIT
   min_ansible_version: 1.8
-  #platforms:
-  #- name: Ubuntu
+  platforms:
+  - name: Ubuntu
   #  versions:
   #  - all
   #  - lucid
@@ -20,7 +20,7 @@ galaxy_info:
   #  - raring
   #  - saucy
   #  - trusty
-  #- name: Debian
+  - name: Debian
   #  versions:
   #  - all
   #  - etch
@@ -92,8 +92,8 @@ galaxy_info:
   #  - 11SP2
   #  - 11SP3
   #
-  #categories:
-  #- cloud
+  categories:
+  - cloud
   #- cloud:ec2
   #- cloud:gce
   #- cloud:rax
@@ -105,6 +105,6 @@ galaxy_info:
   #- monitoring
   #- networking
   #- packaging
-  #- system
+  - system
   #- web
 
