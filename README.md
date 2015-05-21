@@ -1,6 +1,8 @@
 bootstrap
 =========
 
+[![Build Status](https://travis-ci.org/gotansible/bootstrap.svg)](https://travis-ci.org/gotansible/bootstrap)
+
 Sets up a new system with some basics.
 
 * hostname
