@@ -1,0 +1,11 @@
+---
+
+- name: depend - minimal Python support for Ansible
+  raw: apt-get --no-install-recommends -yq install python python-apt libcap2-bin
+
+- name: depend - apt bring system current
+  apt:
+    cache_valid_time=3600
+    update_cache=yes
+    upgrade=safe
+    state=present

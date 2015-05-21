@@ -1,0 +1,5 @@
+---
+
+bootstrap_hostname: myhostname
+bootstrap_domain: localdomain
+#bootstrap_ipv4:

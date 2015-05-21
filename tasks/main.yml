@@ -1,0 +1,12 @@
+---
+
+- name: set host name
+  include: hostname.yml
+
+- name: dependencies
+  include: depend.yml
+
+- name: setup global vim
+  include: vim.yml
+
+

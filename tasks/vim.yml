@@ -1,0 +1,13 @@
+---
+
+- name: vim - debian -install vimrc.local 
+  template: 
+    src=vimrc.local.j2
+    dest=/etc/vim/vimrc.local
+  when: ansible_os_family == 'Debian'
+
+- name: vim - centos - install vimrc.local
+  template: 
+    src=vimrc.local.j2
+    dest=/etc/vimrc.local
+  when: ansible_os_family == 'RedHat'

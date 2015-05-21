@@ -1,0 +1,27 @@
+
+filetype plugin indent on
+
+"VISUAL
+set background=dark "colors will take this into account
+
+set noexpandtab "keep TABS!!
+set tabstop=4	"tabs are 4 spaces wide
+set number		"show line numbers
+set showcmd		"show command bar on bottom
+set cursorline	"highligh cursor line	
+set showmatch  	"highlights matching braces	
+
+syntax enable	
+
+" Syntax of these languages is fussy over tabs Vs spaces
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType ansible setlocal ts=2 sts=2 sw=2 expandtab
+
+"LEADER key remap
+let mapleader=","       " leader is comma, rather than \
+
+"SEARCH
+set hlsearch	"highlight search matches
+" clear search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
