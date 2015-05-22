@@ -1,7 +1,7 @@
-bootstrap
+Basics
 =========
 
-[![Build Status](https://travis-ci.org/gotansible/bootstrap.svg)](https://travis-ci.org/gotansible/bootstrap)
+[![Build Status](https://travis-ci.org/gotansible/basics.svg)](https://travis-ci.org/gotansible/basics)
 
 Sets up a new system with some basics.
 
@@ -18,8 +18,8 @@ Requirements
 Role Variables
 --------------
 
-bootstrap_hostname: myhostname
-bootstrap_domain: localdomain.com
+basics_hostname: myhostname
+basics_domain: localdomain.com
 
 Dependencies
 ------------
@@ -34,9 +34,9 @@ Including an example of how to use your role (for instance, with variables passe
 ```yaml
     - hosts: servers
       roles:
-         - role: gotansible.bootstrap
-		 bootstrap_hostname: web-01
-		 bootstrap_domain: myorg.prod
+         - role: gotansible.basics
+		 basics_hostname: web-01
+		 basics_domain: myorg.prod
 ```
 
 License

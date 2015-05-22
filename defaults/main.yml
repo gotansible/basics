@@ -1,5 +1,5 @@
 ---
 
-bootstrap_hostname: myhostname
-bootstrap_domain: localdomain
-#bootstrap_ipv4:
+basics_hostname: myhostname
+basics_domain: localdomain
+#basics_ipv4:

@@ -1,7 +1,7 @@
 ---
 
-- name: depend - minimal Python support for Ansible
-  raw: apt-get --no-install-recommends -yq install python python-apt libcap2-bin
+#- name: depend - minimal Python support for Ansible
+#  raw: apt-get -yq install python python-apt libcap2-bin
 
 - name: depend - apt bring system current
   apt:

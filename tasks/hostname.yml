@@ -2,15 +2,15 @@
 
 - name: hostname - set
   hostname:
-    name: '{{ bootstrap_hostname }}'
-  when: bootstrap_hostname is defined and bootstrap_hostname|length > 0
+    name: '{{ basics_hostname }}'
+  when: basics_hostname is defined and basics_hostname|length > 0
 
 - name: hostname - hosts
   lineinfile:
     state: present
     dest: /etc/hosts
-    regexp: '{{ "^" + (bootstrap_ipv4 | default("127.0.1.1")) | replace(".","\.") }}'
-    line: '{{ (bootstrap_ipv4 | default("127.0.1.1")) + "\t" + (bootstrap_hostname | default(ansible_hostname)) + "." + bootstrap_domain + "\t" + (bootstrap_hostname | default(ansible_hostname)) }}'
-  when: bootstrap_domain is defined and bootstrap_domain
+    regexp: '{{ "^" + (basics_ipv4 | default("127.0.1.1")) | replace(".","\.") }}'
+    line: '{{ (basics_ipv4 | default("127.0.1.1")) + "\t" + (basics_hostname | default(ansible_hostname)) + "." + basics_domain + "\t" + (basics_hostname | default(ansible_hostname)) }}'
+  when: basics_domain is defined and basics_domain
 
 
