@@ -1,7 +1,6 @@
 ---
 
-#- name: depend - minimal Python support for Ansible
-#  raw: apt-get -yq install python python-apt libcap2-bin
+#   python python-apt libcap2-bin
 
 - name: depend - apt bring system current
   apt:
@@ -9,3 +8,11 @@
     update_cache=yes
     upgrade=safe
     state=present
+  when: ansible_os_family == 'Debian'
+
+- name: depend - yum bring system current
+  yum:
+    name=*
+    update_cache=yes
+    state=latest
+  when: ansible_os_family == 'RedHat'
