@@ -1,18 +1,19 @@
 ---
 
-#   python python-apt libcap2-bin
-
-- name: depend - apt bring system current
+- name: depend - apt
   apt:
+    name={{ item }}
     cache_valid_time=3600
     update_cache=yes
-    upgrade=safe
     state=present
+  with_items: []
   when: ansible_os_family == 'Debian'
 
-- name: depend - yum bring system current
+- name: depend - yum
   yum:
-    name=*
+    name={{ item }}
     update_cache=yes
     state=latest
+  with_items: []
   when: ansible_os_family == 'RedHat'
+
