@@ -1,7 +1,15 @@
 ---
 
+- name: get hostname
+  shell: hostname
+  register: initial_hostname
+
 - name: set host name
   include: hostname.yml
+
+- name: get hostname
+  shell: hostname
+  register: check_hostname
 
 - name: dependencies
   include: depend.yml
@@ -9,4 +17,15 @@
 - name: setup global vim
   include: vim.yml
 
+- name: restart machine
+  command: shutdown -r now "Ansible role basics triggered"
+  async: 0
+  poll: 0
+  ignore_errors: true
+  when: initial_hostname.stdout != check_hostname.stdout
 
+- name: waiting for server to come back
+  local_action: wait_for host={{ inventory_hostname }}
+                state=started
+  sudo: false
+  when: initial_hostname.stdout != check_hostname.stdout
