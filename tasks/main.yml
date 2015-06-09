@@ -1,15 +1,17 @@
 ---
 
 - name: get hostname
-  shell: hostname
+  shell: hostname --fqdn
   register: initial_hostname
+  changed_when: False
 
 - name: set host name
   include: hostname.yml
 
 - name: get hostname
-  shell: hostname
+  shell: hostname --fqdn
   register: check_hostname
+  changed_when: initial_hostname.stdout != check_hostname.stdout
 
 - name: dependencies
   include: depend.yml
