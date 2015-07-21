@@ -2,4 +2,7 @@
 
 basics_hostname: myhostname
 basics_domain: localdomain
+
+basics_apt_packages:
+  - tree
 #basics_ipv4:

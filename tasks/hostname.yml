@@ -10,7 +10,7 @@
     state: present
     dest: /etc/hosts
     regexp: '{{ "^" + (basics_ipv4 | default("127.0.1.1")) | replace(".","\.") }}'
-    line: '{{ (basics_ipv4 | default("127.0.1.1")) + "\t" + (basics_hostname | default(ansible_hostname)) + "." + basics_domain + "\t" + (basics_hostname | default(ansible_hostname)) }}'
+    line: '{{ (basics_ipv4 | default("127.0.0.1")) + "\t" + (basics_hostname | default(ansible_hostname)) + "." + basics_domain + "\t" + (basics_hostname | default(ansible_hostname)) }}'
   when: basics_domain is defined and basics_domain
 
 
