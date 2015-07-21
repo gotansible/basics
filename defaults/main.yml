@@ -5,4 +5,5 @@ basics_domain: localdomain
 
 basics_apt_packages:
   - tree
-#basics_ipv4:
+
+basics_ipv4: "{{ ansible_default_ipv4['address'] }}"

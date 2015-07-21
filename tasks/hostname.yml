@@ -5,12 +5,15 @@
     name: '{{ basics_hostname }}'
   when: basics_hostname is defined and basics_hostname|length > 0
 
+# 127.0.1.1 is used on ubuntu as fallback because of bug
+# http://www.debian.org/doc/manuals/debian-reference/ch05.en.html#_the_hostname_resolution
+  
 - name: hostname - hosts
   lineinfile:
     state: present
     dest: /etc/hosts
     regexp: '{{ "^" + (basics_ipv4 | default("127.0.1.1")) | replace(".","\.") }}'
-    line: '{{ (basics_ipv4 | default("127.0.0.1")) + "\t" + (basics_hostname | default(ansible_hostname)) + "." + basics_domain + "\t" + (basics_hostname | default(ansible_hostname)) }}'
+    line: '{{ (basics_ipv4 | default("127.0.1.1")) + "\t" + (basics_hostname | default(ansible_hostname)) + "." + basics_domain + "\t" + (basics_hostname | default(ansible_hostname)) }}'
   when: basics_domain is defined and basics_domain
 
 
