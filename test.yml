@@ -3,3 +3,5 @@
   sudo: true
   roles:
     - role: basics
+      basics_hostname: "{{ inventory_hostname }}"
+
