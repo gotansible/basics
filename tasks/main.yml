@@ -34,5 +34,5 @@
       delay=1
       timeout=300
       state=started
-    sudo: false
+  sudo: false
   when: initial_hostname.stdout != check_hostname.stdout
