@@ -36,3 +36,6 @@
       state=started
   sudo: false
   when: initial_hostname.stdout != check_hostname.stdout
+
+- name: pausing 20 seconds
+  pause: seconds=20
