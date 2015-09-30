@@ -28,6 +28,7 @@
 
 - name: pausing 20 seconds
   pause: seconds=20
+  when: initial_hostname.stdout != check_hostname.stdout
 
 - name: waiting for server to come back
   local_action:
