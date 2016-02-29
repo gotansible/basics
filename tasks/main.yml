@@ -31,13 +31,13 @@
   when: initial_hostname.stdout != check_hostname.stdout
 
 - name: waiting for server to come back
-  local_action:
-    module: wait_for
+  wait_for: >
       host={{ ansible_default_ipv4['address'] }}
       port=22
-      delay=1
+      delay=5
       timeout=300
       state=started
   sudo: false
+  delegate_to: localhost
   when: initial_hostname.stdout != check_hostname.stdout
 
