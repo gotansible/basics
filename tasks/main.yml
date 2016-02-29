@@ -35,9 +35,10 @@
       host={{ ansible_default_ipv4['address'] }}
       port=22
       delay=5
-      timeout=120
+      timeout=90
       state=started
   sudo: false
+  ignore_errors: true
   delegate_to: localhost
   when: initial_hostname.stdout != check_hostname.stdout
 
