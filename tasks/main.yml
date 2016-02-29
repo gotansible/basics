@@ -26,8 +26,8 @@
   ignore_errors: true
   when: initial_hostname.stdout != check_hostname.stdout
 
-- name: pausing 20 seconds
-  pause: seconds=20
+- name: pausing 10 seconds
+  pause: seconds=10
   when: initial_hostname.stdout != check_hostname.stdout
 
 - name: waiting for server to come back
