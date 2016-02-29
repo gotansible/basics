@@ -35,7 +35,7 @@
       host={{ ansible_default_ipv4['address'] }}
       port=22
       delay=5
-      timeout=300
+      timeout=120
       state=started
   sudo: false
   delegate_to: localhost
